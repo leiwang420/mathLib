@@ -14,11 +14,11 @@ namespace tut
 	typedef test_group<data> tg;
 	tg testgroup("test Vector2");
 
-	typedef tg::object testobject;
+	typedef tg::object Vector2TestObject;
 
 	template<>
 	template<>
-	void testobject::test<1>()
+	void Vector2TestObject::test<1>()
 	{
 		set_test_name("sqrMagnitude");
 
@@ -28,7 +28,7 @@ namespace tut
 
 	template<>
 	template<>
-	void testobject::test<2>()
+	void Vector2TestObject::test<2>()
 	{
 		set_test_name("toString");
 
@@ -38,21 +38,21 @@ namespace tut
 
 	template<>
 	template<>
-	void testobject::test<3>()
+	void Vector2TestObject::test<3>()
 	{
 		set_test_name("lerp and lerpUnclamped");
 
 		Vector2 b(4, 0);
-		auto r = Vector2::lerp(Vector2::zero, b, 0.25f);
+		auto r = Vector2::lerp(Vector2::Zero, b, 0.25f);
 		ensure_equals(r.x,1.0f);
 
-		auto r2 = Vector2::lerpUnclamped(Vector2::zero, b, 1.25f);
+		auto r2 = Vector2::lerpUnclamped(Vector2::Zero, b, 1.25f);
 		ensure_equals(r2.x, 5.0f);
 	}
 
 	template<>
 	template<>
-	void testobject::test<4>()
+	void Vector2TestObject::test<4>()
 	{
 		set_test_name("angle");
 
@@ -64,7 +64,7 @@ namespace tut
 
 	template<>
 	template<>
-	void testobject::test<5>()
+	void Vector2TestObject::test<5>()
 	{
 		set_test_name("clampMagnitude");
 
@@ -75,13 +75,24 @@ namespace tut
 
 	template<>
 	template<>
-	void testobject::test<6>()
+	void Vector2TestObject::test<6>()
 	{
 		set_test_name("moveTowards");
 
 		Vector2 a(0, 12);
-		auto r = Vector2::moveTowards(Vector2::zero, a,13);
+		auto r = Vector2::moveTowards(Vector2::Zero, a,13);
 		ensure_equals(r.magnitude(), 12);
+	}
+
+	template<>
+	template<>
+	void Vector2TestObject::test<7>()
+	{
+		set_test_name("reflect");
+
+		Vector2 a(3, 4);
+		auto r = Vector2::reflect(a, Vector2::Right);
+		ensure_equals(r,Vector2(3,-4));
 	}
 	
 }

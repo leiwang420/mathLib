@@ -1,17 +1,20 @@
 #include <cmath>
-#include "Vector2.h"
+#include <climits>
 #include "Mathf.h"
+#include "Vector3.h"
+#include "Vector2.h"
+
 
 using namespace std;
 
-Vector2 Vector2::down(0,-1);
-Vector2 Vector2::left(-1,0);
-Vector2 Vector2::one(1,1);
-Vector2 Vector2::right(1,0);
-Vector2 Vector2::up(0,1);
-Vector2 Vector2::zero(0,0);
+const Vector2 Vector2::Down(0, -1);
+const Vector2 Vector2::Left(-1, 0);
+const Vector2 Vector2::One(1, 1);
+const Vector2 Vector2::Right(1, 0);
+const Vector2 Vector2::Up(0, 1);
+const Vector2 Vector2::Zero(0, 0);
 
-
+Vector2::Vector2(const Vector3& v) :x(v.x), y(v.y){}
 float Vector2::magnitude() const
 {
 	return sqrt(x*x + y*y);
@@ -21,7 +24,7 @@ Vector2 Vector2::normalized() const
 {
 	float m = this->magnitude();
 	if (m == 0)
-		return zero;
+		return Zero;
 	return Vector2(x/m,y/m);
 }
 
@@ -46,7 +49,7 @@ void Vector2::set(float _x, float _y)
 	y = _y;
 }
 
-std::string Vector2::toString()
+std::string Vector2::toString() const
 {
 	char buf[256];
 	sprintf_s(buf, "Vector2(%f,%f)", x, y);
@@ -58,7 +61,7 @@ float Vector2::angle(const Vector2& from, const Vector2& to)
 	auto normalizedFrom = from.normalized();
 	auto normalizedTo = to.normalized();
 	auto dotValue = dot(normalizedFrom, normalizedTo);
-	auto r = asin(dotValue);
+	auto r = acos(dotValue);
 	return r * Mathf::Rad2Deg;
 }
 
@@ -83,7 +86,7 @@ float Vector2::distance(const Vector2& a, const Vector2& b)
 
 float Vector2::dot(const Vector2& a, const Vector2& b)
 {
-	return a.x*b.y + a.y*b.x;
+	return a.x*b.x + a.y*b.y;
 }
 
 Vector2 Vector2::lerp(const Vector2& a, const Vector2& b, float t)
@@ -117,23 +120,42 @@ Vector2 Vector2::moveTowards(const Vector2& current, const Vector2& target, floa
 	return current + v.normalized()*dis;
 }
 
-Vector2 Vector2::Reflect(const Vector2& inDir, const Vector2& inNormal)
+Vector2 Vector2::projectToNormal(const Vector2& a, const Vector2& normal)
 {
-	//TODO:
-	return Vector2();
+	auto n = normal.normalized();
+	auto length = dot(a, n);
+	return length*n;
 }
 
-Vector2 Vector2::Scale(const Vector2& a, const Vector2& b)
+Vector2 Vector2::reflect(const Vector2& inDir, const Vector2& inNormal)
 {
-	//TODO:
-	return Vector2();
+	Vector2 proj = projectToNormal(inDir, inNormal);
+	return proj * 2 - inDir;
 }
 
-Vector2 Vector2::SmoothDamp(const Vector2& current, const Vector2& target, Vector2& currentVelocity,
+Vector2 Vector2::scale(const Vector2& a, const Vector2& b)
+{
+	return Vector2(a.x*b.x,a.y*b.y);
+}
+
+Vector2 Vector2::smoothDamp(const Vector2& current, const Vector2& target, Vector2& currentVelocity,
 	float smoothTime, float maxSpeed, float deltaTime)
 {
 	//TODO:
-	return Vector2();
+	Vector2 newPos = current;
+	if (smoothTime > deltaTime)
+	{
+		Vector2 dis = target - current;//距离
+		Vector2 averageVelocity = dis / smoothTime;//平均速度
+		Vector2 acc = (averageVelocity - currentVelocity) / smoothTime;
+		currentVelocity = currentVelocity + acc*deltaTime;
+		Vector2 newPos = current + currentVelocity*deltaTime + 0.5f*acc*deltaTime*deltaTime;
+	}
+	else
+	{
+		newPos = target;
+	}
+	return newPos;
 }
 
 Vector2 Vector2::operator-(const Vector2& rhl) const
@@ -169,4 +191,10 @@ bool Vector2::operator!=(const Vector2& rhl) const
 Vector2 operator*(float d, const Vector2& rhl)
 {
 	return Vector2(d*rhl.x, d*rhl.y);
+}
+
+std::ostream& operator<<(std::ostream& o, const Vector2& v)
+{
+	o << v.toString();
+	return o;
 }
