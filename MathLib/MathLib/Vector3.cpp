@@ -59,7 +59,7 @@ void Vector3::set(float _x, float _y, float _z)
 std::string Vector3::toString() const
 {
 	char buf[256];
-	sprintf_s(buf, "Vector3(%f,%f,%f)", x, y,z);
+	sprintf(buf, "Vector3(%f,%f,%f)", x, y,z);
 	return string(buf);
 }
 
