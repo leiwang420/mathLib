@@ -6,6 +6,7 @@
 #include "MTime.h"
 
 class Vector2;
+class Vector4;
 
 class Vector3
 {
@@ -14,6 +15,7 @@ public:
 	Vector3(float _x, float _y, float _z=0) :x(_x), y(_y), z(_z){}
 	Vector3(const Vector3& v) :x(v.x), y(v.y), z(v.z){}
 	Vector3(const Vector2& v);
+	Vector3(const Vector4& v);
 
 	union
 	{

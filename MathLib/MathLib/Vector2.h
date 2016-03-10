@@ -8,6 +8,7 @@
 
 
 class Vector3;
+class Vector4;
 
 class Vector2
 {
@@ -17,6 +18,7 @@ public:
 	Vector2(float _x, float _y):x(_x),y(_y){}
 	Vector2(const Vector2& v) :x(v.x), y(v.y){}
 	Vector2(const Vector3& v);
+	Vector2(const Vector4& v);
 	// Variables
 	union
 	{

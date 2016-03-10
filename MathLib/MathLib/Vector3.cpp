@@ -3,11 +3,9 @@
 
 #include "Mathf.h"
 #include "Vector2.h"
+#include "Vector4.h"
 #include "Vector3.h"
 
-
-
-using namespace std;
 
 const Vector3 Vector3::Back(0,0, -1);
 const Vector3 Vector3::Down(0, -1,0);
@@ -18,11 +16,12 @@ const Vector3 Vector3::Right(1, 0,0);
 const Vector3 Vector3::Up(0, 1,0);
 const Vector3 Vector3::Zero(0, 0,0);
 
-Vector3::Vector3(const Vector2& v) :x(v.x), y(v.y), z(0){}
+Vector3::Vector3(const Vector2& v2) :x(v2.x), y(v2.y), z(0){}
+Vector3::Vector3(const Vector4& v4) :x(v4.x), y(v4.y), z(v4.z){}
 
 float Vector3::magnitude() const
 {
-	return sqrt(x*x + y*y + z*z);
+	return sqrt(sqrMagnitude());
 }
 
 Vector3 Vector3::normalized() const
@@ -60,7 +59,7 @@ std::string Vector3::toString() const
 {
 	char buf[256];
 	sprintf_s(buf, "Vector3(%f,%f,%f)", x, y,z);
-	return string(buf);
+	return std::string(buf);
 }
 
 float Vector3::angle(const Vector3& from, const Vector3& to)
@@ -184,7 +183,7 @@ Vector3 Vector3::smoothDamp(const Vector3& current, const Vector3& target, Vecto
 
 Vector3 Vector3::operator-(const Vector3& rhl) const
 {
-	return Vector3(x - rhl.x, y - rhl.y,x - rhl.z);
+	return Vector3(x - rhl.x, y - rhl.y,z - rhl.z);
 }
 
 Vector3 Vector3::operator+(const Vector3& rhl) const
@@ -204,12 +203,12 @@ Vector3 Vector3::operator/(float d) const
 
 bool Vector3::operator==(const Vector3& rhl) const
 {
-	return x == rhl.x && y == rhl.y;
+	return x == rhl.x && y == rhl.y && z == rhl.z;
 }
 
 bool Vector3::operator!=(const Vector3& rhl) const
 {
-	return x != rhl.x || y != rhl.y;
+	return x != rhl.x || y != rhl.y || z != rhl.z;
 }
 
 Vector3 operator*(float d, const Vector3& rhl)

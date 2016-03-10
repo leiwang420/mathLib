@@ -83,7 +83,7 @@ namespace tut
 		set_test_name("moveTowards");
 
 		Vector3 a(0, 12,0);
-		auto r = Vector2::moveTowards(Vector3::Zero, a, 13);
+		auto r = Vector3::moveTowards(Vector3::Zero, a, 13);
 		ensure_equals(r.magnitude(), 12);
 	}
 
@@ -95,7 +95,7 @@ namespace tut
 
 		Vector3 a(3, 4,5);
 		auto r = Vector3::reflect(a, Vector3::Right);
-		ensure_equals(r, Vector3(3, -4,5));
+		ensure_equals(r, Vector3(3, -4,-5));
 	}
 
 }
