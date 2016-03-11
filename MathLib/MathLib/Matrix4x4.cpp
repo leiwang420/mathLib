@@ -33,7 +33,7 @@ Matrix4x4::Matrix4x4()
 
 Matrix4x4::Matrix4x4(float* _m)
 {
-	memcpy(&m[0], _m, sizeof(_m));
+	memcpy(&m[0], _m, sizeof(m));
 }
 
 //ÐÐÁÐÊ½
@@ -172,7 +172,7 @@ bool Matrix4x4::operator==(const Matrix4x4& rhs) const
 {
 	for (int i = 0; i < 16; ++i)
 	{
-		if (m[i] != rhs.m[16])
+		if (m[i] != rhs.m[i])
 			return false;
 	}
 

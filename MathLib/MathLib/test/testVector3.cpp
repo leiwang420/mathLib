@@ -62,7 +62,7 @@ namespace tut
 		Vector3 a(0, 4,0);
 		Vector3 b(4, 0,0);
 		auto r = Vector3::angle(a, b);
-		ensure_equals(r, 90);
+        ensure_distance(r, 90.0f, 0.1f);
 	}
 
 	template<>

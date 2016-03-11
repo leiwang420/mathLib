@@ -13,10 +13,10 @@ namespace tut
 
 	};
 
-	typedef test_group<data3> tg;
-	tg testgroup("test Vector4");
+	typedef test_group<data3> tg3;
+	tg3 testgroup3("test Vector4");
 
-	typedef tg::object testobject2;
+	typedef tg3::object testobject2;
 
 
 	template<>

@@ -1,3 +1,6 @@
+#include <cmath>
+#include <climits>
+
 #include "Mathf.h"
 #include "Vector2.h"
 #include "Vector3.h"
@@ -49,7 +52,7 @@ void Vector4::set(float _x, float _y, float _z, float _w)
 std::string Vector4::toString() const
 {
 	char buf[256];
-	sprintf_s(buf, "Vector4(%f,%f,%f,%f)", x, y, z,w);
+	sprintf(buf, "Vector4(%f,%f,%f,%f)", x, y, z,w);
 	return std::string(buf);
 }
 
