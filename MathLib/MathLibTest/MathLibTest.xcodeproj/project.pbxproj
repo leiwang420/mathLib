@@ -16,6 +16,10 @@
 		9B0231F01C91BC27002BF152 /* testVector2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B0231EE1C91BC27002BF152 /* testVector2.cpp */; };
 		9B0231F11C91BC27002BF152 /* testVector3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B0231EF1C91BC27002BF152 /* testVector3.cpp */; };
 		9B0231F31C91BF64002BF152 /* testMathf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B0231F21C91BF64002BF152 /* testMathf.cpp */; };
+		9B0231F81C9300E1002BF152 /* Matrix4x4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B0231F41C9300E1002BF152 /* Matrix4x4.cpp */; };
+		9B0231F91C9300E1002BF152 /* Quaternion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B0231F61C9300E1002BF152 /* Quaternion.cpp */; };
+		9B0231FD1C930113002BF152 /* testMatrix4x4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B0231FB1C930113002BF152 /* testMatrix4x4.cpp */; };
+		9B0231FE1C930113002BF152 /* testVector4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B0231FC1C930113002BF152 /* testVector4.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +50,13 @@
 		9B0231EE1C91BC27002BF152 /* testVector2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = testVector2.cpp; path = ../../MathLib/test/testVector2.cpp; sourceTree = "<group>"; };
 		9B0231EF1C91BC27002BF152 /* testVector3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = testVector3.cpp; path = ../../MathLib/test/testVector3.cpp; sourceTree = "<group>"; };
 		9B0231F21C91BF64002BF152 /* testMathf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = testMathf.cpp; path = ../../MathLib/test/testMathf.cpp; sourceTree = "<group>"; };
+		9B0231F41C9300E1002BF152 /* Matrix4x4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Matrix4x4.cpp; path = ../../MathLib/Matrix4x4.cpp; sourceTree = "<group>"; };
+		9B0231F51C9300E1002BF152 /* Matrix4x4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Matrix4x4.h; path = ../../MathLib/Matrix4x4.h; sourceTree = "<group>"; };
+		9B0231F61C9300E1002BF152 /* Quaternion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Quaternion.cpp; path = ../../MathLib/Quaternion.cpp; sourceTree = "<group>"; };
+		9B0231F71C9300E1002BF152 /* Quaternion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Quaternion.h; path = ../../MathLib/Quaternion.h; sourceTree = "<group>"; };
+		9B0231FB1C930113002BF152 /* testMatrix4x4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = testMatrix4x4.cpp; path = ../../MathLib/test/testMatrix4x4.cpp; sourceTree = "<group>"; };
+		9B0231FC1C930113002BF152 /* testVector4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = testVector4.cpp; path = ../../MathLib/test/testVector4.cpp; sourceTree = "<group>"; };
+		9B0231FF1C930135002BF152 /* MathLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MathLib.h; path = ../../MathLib/MathLib.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +89,11 @@
 		9B0231D51C91BBDD002BF152 /* MathLibTest */ = {
 			isa = PBXGroup;
 			children = (
-				9B0231EE1C91BC27002BF152 /* testVector2.cpp */,
-				9B0231EF1C91BC27002BF152 /* testVector3.cpp */,
+				9B0231FA1C9300ED002BF152 /* test */,
+				9B0231F41C9300E1002BF152 /* Matrix4x4.cpp */,
+				9B0231F51C9300E1002BF152 /* Matrix4x4.h */,
+				9B0231F61C9300E1002BF152 /* Quaternion.cpp */,
+				9B0231F71C9300E1002BF152 /* Quaternion.h */,
 				9B0231DD1C91BC0F002BF152 /* Main.cpp */,
 				9B0231DE1C91BC0F002BF152 /* Mathf.cpp */,
 				9B0231DF1C91BC0F002BF152 /* Mathf.h */,
@@ -91,9 +105,21 @@
 				9B0231E51C91BC0F002BF152 /* Vector3.h */,
 				9B0231E61C91BC0F002BF152 /* Vector4.cpp */,
 				9B0231E71C91BC0F002BF152 /* Vector4.h */,
-				9B0231F21C91BF64002BF152 /* testMathf.cpp */,
+				9B0231FF1C930135002BF152 /* MathLib.h */,
 			);
 			path = MathLibTest;
+			sourceTree = "<group>";
+		};
+		9B0231FA1C9300ED002BF152 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				9B0231FB1C930113002BF152 /* testMatrix4x4.cpp */,
+				9B0231FC1C930113002BF152 /* testVector4.cpp */,
+				9B0231F21C91BF64002BF152 /* testMathf.cpp */,
+				9B0231EE1C91BC27002BF152 /* testVector2.cpp */,
+				9B0231EF1C91BC27002BF152 /* testVector3.cpp */,
+			);
+			name = test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,10 +183,14 @@
 				9B0231EC1C91BC0F002BF152 /* Vector3.cpp in Sources */,
 				9B0231EB1C91BC0F002BF152 /* Vector2.cpp in Sources */,
 				9B0231EA1C91BC0F002BF152 /* MTime.cpp in Sources */,
+				9B0231F81C9300E1002BF152 /* Matrix4x4.cpp in Sources */,
 				9B0231F01C91BC27002BF152 /* testVector2.cpp in Sources */,
+				9B0231FD1C930113002BF152 /* testMatrix4x4.cpp in Sources */,
+				9B0231F91C9300E1002BF152 /* Quaternion.cpp in Sources */,
 				9B0231F11C91BC27002BF152 /* testVector3.cpp in Sources */,
 				9B0231F31C91BF64002BF152 /* testMathf.cpp in Sources */,
 				9B0231E81C91BC0F002BF152 /* Main.cpp in Sources */,
+				9B0231FE1C930113002BF152 /* testVector4.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +311,7 @@
 				9B0231DC1C91BBDD002BF152 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
