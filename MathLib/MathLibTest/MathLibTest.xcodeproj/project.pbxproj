@@ -15,6 +15,7 @@
 		9B0231ED1C91BC0F002BF152 /* Vector4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B0231E61C91BC0F002BF152 /* Vector4.cpp */; };
 		9B0231F01C91BC27002BF152 /* testVector2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B0231EE1C91BC27002BF152 /* testVector2.cpp */; };
 		9B0231F11C91BC27002BF152 /* testVector3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B0231EF1C91BC27002BF152 /* testVector3.cpp */; };
+		9B0231F31C91BF64002BF152 /* testMathf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B0231F21C91BF64002BF152 /* testMathf.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +45,7 @@
 		9B0231E71C91BC0F002BF152 /* Vector4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vector4.h; path = ../../MathLib/Vector4.h; sourceTree = "<group>"; };
 		9B0231EE1C91BC27002BF152 /* testVector2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = testVector2.cpp; path = ../../MathLib/test/testVector2.cpp; sourceTree = "<group>"; };
 		9B0231EF1C91BC27002BF152 /* testVector3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = testVector3.cpp; path = ../../MathLib/test/testVector3.cpp; sourceTree = "<group>"; };
+		9B0231F21C91BF64002BF152 /* testMathf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = testMathf.cpp; path = ../../MathLib/test/testMathf.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				9B0231E51C91BC0F002BF152 /* Vector3.h */,
 				9B0231E61C91BC0F002BF152 /* Vector4.cpp */,
 				9B0231E71C91BC0F002BF152 /* Vector4.h */,
+				9B0231F21C91BF64002BF152 /* testMathf.cpp */,
 			);
 			path = MathLibTest;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				9B0231EA1C91BC0F002BF152 /* MTime.cpp in Sources */,
 				9B0231F01C91BC27002BF152 /* testVector2.cpp in Sources */,
 				9B0231F11C91BC27002BF152 /* testVector3.cpp in Sources */,
+				9B0231F31C91BF64002BF152 /* testMathf.cpp in Sources */,
 				9B0231E81C91BC0F002BF152 /* Main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
