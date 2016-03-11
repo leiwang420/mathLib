@@ -2,6 +2,7 @@
 #include <climits>
 #include "Mathf.h"
 #include "Vector3.h"
+#include "Vector4.h"
 #include "Vector2.h"
 
 
@@ -14,7 +15,9 @@ const Vector2 Vector2::Right(1, 0);
 const Vector2 Vector2::Up(0, 1);
 const Vector2 Vector2::Zero(0, 0);
 
-Vector2::Vector2(const Vector3& v) :x(v.x), y(v.y){}
+Vector2::Vector2(const Vector3& v3) :x(v3.x), y(v3.y){}
+Vector2::Vector2(const Vector4& v4) : x(v4.x), y(v4.y){}
+
 float Vector2::magnitude() const
 {
 	return sqrt(x*x + y*y);
