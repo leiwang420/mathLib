@@ -1,10 +1,10 @@
 #pragma once
 
 #include <string>
-class Vector2;
-class Vector3;
+struct Vector2;
+struct Vector3;
 
-class Vector4
+struct Vector4
 {
 public:
 	Vector4() :x(0), y(0), z(0){}
@@ -17,7 +17,7 @@ public:
 	{
 		struct
 		{
-			float x, y, z,w;
+			float x, y, z, w;
 		};
 		float v[4];
 	};

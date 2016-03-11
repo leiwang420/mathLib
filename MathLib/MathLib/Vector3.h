@@ -5,10 +5,10 @@
 #include "Mathf.h"
 #include "MTime.h"
 
-class Vector2;
-class Vector4;
+struct Vector2;
+struct Vector4;
 
-class Vector3
+struct Vector3
 {
 public:
 	Vector3() :x(0), y(0), z(0){}

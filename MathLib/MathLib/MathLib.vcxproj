@@ -51,7 +51,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>..\tut-framework-2013-12-18\include;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -80,7 +80,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Mathf.h" />
+    <ClInclude Include="Matrix4x4.h" />
     <ClInclude Include="MTime.h" />
+    <ClInclude Include="Quaternion.h" />
     <ClInclude Include="test\MathLib.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Vector3.h" />
@@ -89,6 +91,9 @@
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Mathf.cpp" />
+    <ClCompile Include="Matrix4x4.cpp" />
+    <ClCompile Include="Quaternion.cpp" />
+    <ClCompile Include="test\testMatrix4x4.cpp" />
     <ClCompile Include="test\testVector2.cpp" />
     <ClCompile Include="MTime.cpp" />
     <ClCompile Include="test\testVector3.cpp" />

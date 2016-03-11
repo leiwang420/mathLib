@@ -7,10 +7,10 @@
 #include "MTime.h"
 
 
-class Vector3;
-class Vector4;
+struct Vector3;
+struct Vector4;
 
-class Vector2
+struct Vector2
 {
 public:
 	//Constructors
