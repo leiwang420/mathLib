@@ -97,9 +97,9 @@ void Transform::setPosition(const Vector3& v)
 
 void Transform::detachChildren()
 {
-	for each (Transform* c in mChildren)
+    for(auto it = mChildren.begin();it!=mChildren.end();++it)
 	{
-		c->setParent(nullptr);
+		(*it)->setParent(nullptr);
 	}
 }
 

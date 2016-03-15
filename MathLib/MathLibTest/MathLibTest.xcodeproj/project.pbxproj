@@ -20,6 +20,9 @@
 		9B0231F91C9300E1002BF152 /* Quaternion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B0231F61C9300E1002BF152 /* Quaternion.cpp */; };
 		9B0231FD1C930113002BF152 /* testMatrix4x4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B0231FB1C930113002BF152 /* testMatrix4x4.cpp */; };
 		9B0231FE1C930113002BF152 /* testVector4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B0231FC1C930113002BF152 /* testVector4.cpp */; };
+		9B0232021C984622002BF152 /* testQuaternion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B0232001C984622002BF152 /* testQuaternion.cpp */; };
+		9B0232031C984622002BF152 /* testTransform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B0232011C984622002BF152 /* testTransform.cpp */; };
+		9B0232061C98463C002BF152 /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B0232041C98463C002BF152 /* Transform.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +60,10 @@
 		9B0231FB1C930113002BF152 /* testMatrix4x4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = testMatrix4x4.cpp; path = ../../MathLib/test/testMatrix4x4.cpp; sourceTree = "<group>"; };
 		9B0231FC1C930113002BF152 /* testVector4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = testVector4.cpp; path = ../../MathLib/test/testVector4.cpp; sourceTree = "<group>"; };
 		9B0231FF1C930135002BF152 /* MathLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MathLib.h; path = ../../MathLib/MathLib.h; sourceTree = "<group>"; };
+		9B0232001C984622002BF152 /* testQuaternion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = testQuaternion.cpp; path = ../../MathLib/test/testQuaternion.cpp; sourceTree = "<group>"; };
+		9B0232011C984622002BF152 /* testTransform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = testTransform.cpp; path = ../../MathLib/test/testTransform.cpp; sourceTree = "<group>"; };
+		9B0232041C98463C002BF152 /* Transform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Transform.cpp; path = ../../MathLib/Transform.cpp; sourceTree = "<group>"; };
+		9B0232051C98463C002BF152 /* Transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Transform.h; path = ../../MathLib/Transform.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,23 +96,25 @@
 		9B0231D51C91BBDD002BF152 /* MathLibTest */ = {
 			isa = PBXGroup;
 			children = (
-				9B0231FA1C9300ED002BF152 /* test */,
-				9B0231F41C9300E1002BF152 /* Matrix4x4.cpp */,
-				9B0231F51C9300E1002BF152 /* Matrix4x4.h */,
-				9B0231F61C9300E1002BF152 /* Quaternion.cpp */,
-				9B0231F71C9300E1002BF152 /* Quaternion.h */,
 				9B0231DD1C91BC0F002BF152 /* Main.cpp */,
 				9B0231DE1C91BC0F002BF152 /* Mathf.cpp */,
 				9B0231DF1C91BC0F002BF152 /* Mathf.h */,
+				9B0231FF1C930135002BF152 /* MathLib.h */,
+				9B0231F41C9300E1002BF152 /* Matrix4x4.cpp */,
+				9B0231F51C9300E1002BF152 /* Matrix4x4.h */,
 				9B0231E01C91BC0F002BF152 /* MTime.cpp */,
 				9B0231E11C91BC0F002BF152 /* MTime.h */,
+				9B0231F61C9300E1002BF152 /* Quaternion.cpp */,
+				9B0231F71C9300E1002BF152 /* Quaternion.h */,
+				9B0231FA1C9300ED002BF152 /* test */,
+				9B0232041C98463C002BF152 /* Transform.cpp */,
+				9B0232051C98463C002BF152 /* Transform.h */,
 				9B0231E21C91BC0F002BF152 /* Vector2.cpp */,
 				9B0231E31C91BC0F002BF152 /* Vector2.h */,
 				9B0231E41C91BC0F002BF152 /* Vector3.cpp */,
 				9B0231E51C91BC0F002BF152 /* Vector3.h */,
 				9B0231E61C91BC0F002BF152 /* Vector4.cpp */,
 				9B0231E71C91BC0F002BF152 /* Vector4.h */,
-				9B0231FF1C930135002BF152 /* MathLib.h */,
 			);
 			path = MathLibTest;
 			sourceTree = "<group>";
@@ -113,6 +122,8 @@
 		9B0231FA1C9300ED002BF152 /* test */ = {
 			isa = PBXGroup;
 			children = (
+				9B0232001C984622002BF152 /* testQuaternion.cpp */,
+				9B0232011C984622002BF152 /* testTransform.cpp */,
 				9B0231FB1C930113002BF152 /* testMatrix4x4.cpp */,
 				9B0231FC1C930113002BF152 /* testVector4.cpp */,
 				9B0231F21C91BF64002BF152 /* testMathf.cpp */,
@@ -183,12 +194,15 @@
 				9B0231EC1C91BC0F002BF152 /* Vector3.cpp in Sources */,
 				9B0231EB1C91BC0F002BF152 /* Vector2.cpp in Sources */,
 				9B0231EA1C91BC0F002BF152 /* MTime.cpp in Sources */,
+				9B0232021C984622002BF152 /* testQuaternion.cpp in Sources */,
 				9B0231F81C9300E1002BF152 /* Matrix4x4.cpp in Sources */,
 				9B0231F01C91BC27002BF152 /* testVector2.cpp in Sources */,
 				9B0231FD1C930113002BF152 /* testMatrix4x4.cpp in Sources */,
 				9B0231F91C9300E1002BF152 /* Quaternion.cpp in Sources */,
+				9B0232061C98463C002BF152 /* Transform.cpp in Sources */,
 				9B0231F11C91BC27002BF152 /* testVector3.cpp in Sources */,
 				9B0231F31C91BF64002BF152 /* testMathf.cpp in Sources */,
+				9B0232031C984622002BF152 /* testTransform.cpp in Sources */,
 				9B0231E81C91BC0F002BF152 /* Main.cpp in Sources */,
 				9B0231FE1C930113002BF152 /* testVector4.cpp in Sources */,
 			);
