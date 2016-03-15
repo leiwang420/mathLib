@@ -8,4 +8,6 @@
 #include "Matrix4x4.h"
 #include "Quaternion.h"
 
+#include "Transform.h"
+
 #include "MTime.h"

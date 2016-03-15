@@ -34,7 +34,7 @@ namespace tut
 	{
 		set_test_name("matrix construct");
 
-		Matrix4x4 m();
+//		Matrix4x4 m();
 	}
 
 }
