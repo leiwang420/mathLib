@@ -10,5 +10,8 @@ public:
 	static float Deg2Rad;
 	static float Rad2Deg;
 	static float Infinity;
+    static float NegativeInfinity;
+    
+    static bool isPowerOf2(int i);
 };
 

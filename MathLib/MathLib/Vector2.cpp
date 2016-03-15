@@ -55,7 +55,7 @@ void Vector2::set(float _x, float _y)
 std::string Vector2::toString() const
 {
 	char buf[256];
-	sprintf_s(buf, "Vector2(%f,%f)", x, y);
+	sprintf(buf, "Vector2(%f,%f)", x, y);
 	return string(buf);
 }
 
